@@ -21,7 +21,7 @@ $(function(){
 
     //游戏start开始
     $("#real_play").click(function(){
-      $("#mask_div,#pop_div,#start_div,#home_box,#game_guide").fadeOut();
+      //$("#mask_div,#pop_div,#start_div,#home_box,#game_guide").fadeOut();
       //$("#game_pane").fadeIn();
        //boss_enter();
 
