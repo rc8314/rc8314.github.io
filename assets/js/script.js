@@ -23,11 +23,11 @@ $(function(){
     $("#real_play").click(function(){
       //$("#mask_div,#pop_div,#start_div,#home_box,#game_guide").fadeOut();
       //$("#game_pane").fadeIn();
-       //boss_enter();
+      //boss_enter();
 
       //临时控制--测试用（显示失败后画面）
-      $("#game_guide").fadeOut();
-      $("#mask_div,#pop_div,#all_fail").show();
+      $("#game_guide").hide();
+      $("#mask_div,#pop_div,#def_fail").show();
 
     })
  
