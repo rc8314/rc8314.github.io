@@ -97,9 +97,10 @@ body{background:url(../img/bg.png) no-repeat fixed;background-size:100% 100%;}
 @media only screen and (device-height:667px) and (max-device-width:750px) and (-webkit-min-device-pixel-ratio:2) {
 	#start_div{bottom:8%;}
 	#home_gj{top:52%;}
-	#pop_div{height:72%;}
-	#game_boss{margin-top:44%;}
-	#boss_talk{margin-top:7%;}
+	#pop_div{height:76%;}
+	#scorebar{margin-top:8%;}
+	#game_boss{margin-top:48%;}
+	#boss_talk{margin-top:10%;}
 
 }
 
