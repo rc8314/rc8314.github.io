@@ -26,6 +26,7 @@ $(function(){
        //boss_enter();
 
       //临时控制--测试用（显示失败后画面）
+      $("#game_guide").fadeOut();
       $("#mask_div,#pop_div,#all_fail").show();
 
     })
