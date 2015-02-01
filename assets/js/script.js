@@ -15,9 +15,12 @@ $(function(){
 
 
     //home开始start,出现游戏引导
+    var gudietime;
     $("#start_bt").click(function(){
       $("#mask_div,#pop_div").show();
       guide_animate();
+      gudietime = setInterval(guide_animate, 3000);
+
     })
 
     //游戏start开始
@@ -178,5 +181,4 @@ function guide_animate(){
 	$(".hand_off").delay(500).fadeOut(10).delay(2000).fadeIn(10);
 	$("#guide_fire").delay(500).fadeIn(10).animate({marginTop:'20%'},2000).fadeOut(10).animate({marginTop:'14%'},10);
 	$("#guide_fline").delay(500).animate({marginTop:'20%'},2020).animate({marginTop:'14%'},10);
-	gudietime = setInterval(guide_animate, 3000);
 }
