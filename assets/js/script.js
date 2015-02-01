@@ -128,7 +128,7 @@ function play_again(){
 function boss_enter(){
   var boss_id = random(1,3);
   var boss_talk = random(1,3);
-  $("#game_boss").addClass("boss_"+boss_id).animate({height:"22%",marginTop:"40%",opacity:1},1400);
+  $("#game_boss").addClass("boss_"+boss_id).animate({height:"22%",marginTop:"42%",opacity:1},1400);
   $("#boss_talk").addClass("boss_talk_"+boss_talk).delay(1200).animate({opacity:1},2000).delay(1500).animate({opacity:0},1200)
 };
 
