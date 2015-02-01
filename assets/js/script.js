@@ -171,7 +171,7 @@ function boss_animate(){
 
 //旋转鞭炮
 function rotate(rotate_name) {
-	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 900).delay(2600).fadeOut();
+	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 900).delay(1200).fadeOut('fast');
 }
 
 
