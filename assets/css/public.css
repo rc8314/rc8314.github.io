@@ -148,6 +148,8 @@ opacity: 0.8;
 	#scorebar{height:14%}
 	#boss_talk{margin-top:22%;}
 	#fire_line{height: 28%;}
+	#scorebar div{margin-top: 4.2%;}
+
 
 }
 
@@ -159,6 +161,7 @@ opacity: 0.8;
 	#scorebar{margin-top:8%;}
 	#boss_talk{margin-top:10%;}
 	.killnum02{font-size:3.4em;margin:24% 0 0 54%;}
+	#scorebar div{margin-top: 5%;}
 
 
 }
