@@ -139,6 +139,8 @@ opacity: 0.8;
 /* iphone 4 */
 @media only screen and (device-height:480px) and (-webkit-min-device-pixel-ratio:2){
 	#start_div{bottom:1%;}
+	#left_dl{width:30%;margin-top:18%;}
+	#right_dl{width:30%;margin:18%;}
 	#home_gj{top:58%;}
 	#pop_div{height:94%;top:15%;}
 	##guide_txt{height:32%;}
