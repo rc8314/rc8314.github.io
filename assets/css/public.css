@@ -140,14 +140,14 @@ opacity: 0.8;
 @media only screen and (device-height:480px) and (-webkit-min-device-pixel-ratio:2){
 	#start_div{bottom:1%;}
 	#home_gj{top:58%;}
-	#pop_div{height:80%;top:15%;}
+	#pop_div{height:94%;top:15%;}
 	##guide_txt{height:32%;}
 	#real_play{height:18%}
 	#denglong_box{height:45%;}
 	#guide_bz{height:20%;margin-top:32%}
 	#scorebar{height:14%}
 	#boss_talk{margin-top:8%;}
-	##game_pane,#home_box{height:98%;}
+	#game_pane,#home_box{height:100%;}
 	#fire_line{height: 28%;}
 
 }
