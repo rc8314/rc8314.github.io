@@ -156,7 +156,12 @@ opacity: 0.8;
 
 /* iphone 5 */
 @media only screen and (device-height:568px) and (max-device-width:640px) and (-webkit-min-device-pixel-ratio:2) {
-
+	#pop_div{height:74%;}
+	#guide_bz{height:20%;margin-top:32%}
+	#boss_talk{margin-top:9%;}
+	#bz{margin-top:104%;}
+	.fail_box{height:62%;}
+	.killnum02{margin:23% 0 0 53.2%;}
 }
 
 
