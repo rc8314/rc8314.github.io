@@ -25,9 +25,11 @@ $(function(){
 
     //游戏start开始
     $("#real_play").click(function(){
+      
       clearTimeout(gudietime);
       $("#mask_div,#pop_div,#start_div,#home_box,#game_guide").fadeOut();
       $("#game_pane").fadeIn();
+      game.init()
       boss_enter();
       hover_pane();
 
@@ -101,6 +103,13 @@ $(function(){
 
 
 })
+
+var gwidth = window.screen.width / 100 * 84;
+var gheight = window.screen.height / 100 * 90 / 100 * 34;
+//设置svg画布高宽
+$("#drawing").css('width',gwidth+'px').css('height',gheight+'px')
+  .attr('svg_width', gwidth)
+  .attr('svg_height', gheight);
 
 
 //眨眼动画
