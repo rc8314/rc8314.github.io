@@ -29,7 +29,7 @@ $(function(){
       clearTimeout(gudietime);
       $("#mask_div,#pop_div,#start_div,#home_box,#game_guide").fadeOut();
       $("#game_pane").fadeIn();
-      game.init()
+      game.init();
       boss_enter();
       hover_pane();
 
@@ -45,25 +45,7 @@ $(function(){
       play_again();
     })
   
-  
-  	//临时测试模拟触发操纵
-  	var test = 0;
-  	$("#bz").click(function(){
-  	  if (test<3){
-  	    //成功
-  	    test=test+1;
-  	    suss_game(); 
-  	  }else{
-  	    //失败
-  	    test = 0
-        $("#mask_div,#pop_div,#def_fail").show();
-  	  }	
-  	})
-  
-  
-  
-  
-  
+   
   
   
   //眨眼动画开启
@@ -124,7 +106,7 @@ function play_again(){
   $("#mask_div,#pop_div").hide();
   $("#scorebar div").html(1);
   boss_animate();
-  //
+  game.init();
 }
 
 
@@ -161,6 +143,7 @@ function suss_game(){
   rotate("#bzgif");
   $("#bigfire").delay(900).fadeIn().delay(2500).fadeOut();
   setTimeout(boss_animate,4300);
+  game.init();
 
 }
 
@@ -174,7 +157,7 @@ function boss_animate(){
   $("#game_sky").before("<div id='game_boss'></div>");
   $("#game_sky").after("<div id='boss_talk'></div>");
   boss_enter();
-  hover_pane();
+  //hover_pane();
 }
 
 
@@ -190,4 +173,14 @@ function guide_animate(){
 	$(".hand_off").delay(500).fadeOut(10).delay(2000).fadeIn(10);
 	$("#guide_fire").delay(500).fadeIn(10).animate({marginTop:'20%'},2000).fadeOut(10).animate({marginTop:'14%'},10);
 	$("#guide_fline").delay(500).animate({marginTop:'20%'},2020).animate({marginTop:'14%'},10);
+}
+
+
+//
+function ck_state(cc){
+  if (cc==0){
+    $("#mask_div,#pop_div,#all_fail").show();
+  }else{
+    $("#mask_div,#pop_div,#def_fail").show();
+  }
 }
