@@ -39,8 +39,8 @@ $(function(){
  
     //pop close 点击
     $("#pop_close").click(function(){
-      $("#mask_div,#pop_div,#hoverpane,#game_pane").hide();
-      $("#start_div,#home_box").fadeIn();
+      $("#mask_div,#pop_div,#hoverpane,#game_pane,#all_fail,#def_fail").hide();
+      $("#start_div,#home_box,#game_guide").fadeIn();
     })
 
     //再玩一次
