@@ -27,21 +27,24 @@ var
 var game = {
     // 初始化游戏
     init: function () {
+        
         drawAll();
 
         // 绑定按钮事件
-        //bz.mousedown(this.start);
-        //bz.mouseup(this.stop);
-        $("#hoverpane").mousedown(this.start);
-        $("#hoverpane").mouseup(this.stop);
+        // 绑定按钮事件
+        var mc = new Hammer.Manager($("#hoverpane")[0]);
+        mc.add( new Hammer.Press());
+        mc.on("press", game.start);
+        mc.on("pressup", game.stop);
     },
     // 开始游戏
     start: function () {
         // 计算燃烧时间
-        var speed = 3000 - count * 200;
+        var speed = 4000 - count * 170;
+
         console.log('speed: ' + speed);
 
-        path.animate(speed > 1000 ? speed : 1000)
+        path.animate(speed > 1300 ? speed : 1000)
             .stroke({
                 dashoffset: path.length()
             })
