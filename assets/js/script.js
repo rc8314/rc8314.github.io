@@ -54,10 +54,10 @@ $(function(){
   
     //点击分享
     $(".share_bt").click(function(){
-      $("#mask_div,#sharemt").show();
+      $("#sharemt,#sharemask").show();
     })
     $("#sharemt").click(function(){
-      $("#mask_div,#sharemt").hide();
+      $("#sharemt,#sharemask").hide();
     })
   
   //眨眼动画开启
