@@ -1,3 +1,4 @@
+var game_now = 'off';
 var 
     sWidth = $('#drawing').attr('svg_width'), sHeight = $('#drawing').attr('svg_height'),
     vWidth = 455, vHeight = 340,
@@ -28,6 +29,7 @@ var game = {
     // 初始化游戏
     init: function () {
         
+        game_now = 'on';
         drawAll();
 
         // 绑定按钮事件
