@@ -5,12 +5,12 @@ $(function(){
 		
 
   //mask resize
-    $("#mask_div").css("height",document.body.clientHeight+'px');
-    $("#mask_div").css("width",document.body.scrollWidth+'px');
+    $("#mask_div,#sharemask").css("height",document.body.clientHeight+'px');
+    $("#mask_div,#sharemask").css("width",document.body.scrollWidth+'px');
 
     $(window).resize(function(){
-      $("#mask_div").css("height",document.body.clientHeight+'px');
-      $("#mask_div").css("width",document.body.scrollWidth+'px');
+      $("#mask_div,#sharemask").css("height",document.body.clientHeight+'px');
+      $("#mask_div,#sharemask").css("width",document.body.scrollWidth+'px');
     });
 
 
