@@ -140,7 +140,7 @@ function hover_pane(){
 function suss_game(){
   var suss_boss = random(1,3);
   $("#game_boss").addClass("boss_over_"+suss_boss).delay(3000).animate({opacity:0},1200);
-  $("#hover_pane").hide();
+  //$("#hover_pane").hide();
   $("#ctl_box,#bz_box").hide();
   rotate("#bzgif");
   $("#bigfire").delay(900).fadeIn().delay(2500).fadeOut();
