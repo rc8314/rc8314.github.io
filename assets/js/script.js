@@ -52,8 +52,13 @@ $(function(){
       play_again();
     })
   
-   
-  
+    //点击分享
+    $(".share_bt").click(function(){
+      $("#mask_div,#sharemt").show();
+    })
+    $("#sharemt").click(function(){
+      $("#mask_div,#sharemt").hide();
+    })
   
   //眨眼动画开启
   var zyanId = setInterval(zyan,740);
