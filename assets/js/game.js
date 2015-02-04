@@ -40,11 +40,11 @@ var game = {
     // 开始游戏
     start: function () {
         // 计算燃烧时间
-        var speed = 4000 - count * 170;
+        var speed = 3500 - count * 200;
 
         console.log('speed: ' + speed);
 
-        path.animate(speed > 1300 ? speed : 1000)
+        path.animate(speed > 1500 ? speed : 1300)
             .stroke({
                 dashoffset: path.length()
             })
@@ -119,12 +119,12 @@ function drawAll() {
 
     group = draw.group().x(vWidth * 0.5 - 70);
     fire = group.image('../assets/img/fire.gif', 60, 55).center(pathArray[2][3], pathArray[2][4]);
-    bz = group.image('../assets/img/bz.png', 94, 136).y(204);
+    bz = group.image('../assets/img/bz.png', 110, 150).y(204);
     path = group.path(pathArray).fill('none');
 
     // 绘制白色安全区域及红线
     rect = draw.rect(areaArray[2] - areaArray[0], areaArray[3] - areaArray[1]).x(areaArray[0]).y(areaArray[1]).fill('rgba(255,255,255,.7)');
-    line = draw.line(areaArray[0], areaArray[1] + (areaArray[3] - areaArray[1]) / 2, areaArray[2], areaArray[1] + (areaArray[3] - areaArray[1]) / 2).stroke({width: 2, color: '#b30e0e'});
+    line = draw.line(areaArray[0], areaArray[1] + (areaArray[3] - areaArray[1]) / 2, areaArray[2], areaArray[1] + (areaArray[3] - areaArray[1]) / 2).stroke({width: random(1,3), color: '#b30e0e'});
 
     // 设置引线属性，动画用
     path.stroke({width: 4, linecap: 'round', dasharray: path.length(), dashoffset: 0});
