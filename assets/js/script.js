@@ -33,6 +33,7 @@ $(function(){
       {
         game.init();
       }else{
+        count = 0;
         $("#scorebar div").html(1);
         drawAll();
       }

@@ -1,5 +1,4 @@
 var game_now = 'off';
-
 var 
     sWidth = $('#drawing').attr('svg_width'), sHeight = $('#drawing').attr('svg_height'),
     vWidth = 455, vHeight = 340,
