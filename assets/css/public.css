@@ -186,23 +186,27 @@ opacity: 0.8;
 
 
 
-@media only screen and (min-device-width:480px) and (max-device-width:540px) {
-
-}
-
 @media only screen and (min-device-width:720px) and (max-device-width:800px) {
+	#start_div{border:1px solid red;}
+
 
 }
 
 @media only screen and (device-width:720px) and (device-height:1280px) {
+	#start_div{border:1px solid blue;}
+
 
 }
 
 @media only screen and (device-width:1080px) and (device-height:1776px) {
+	#start_div{border:1px solid yellow;}
+
 
 }
 
 @media only screen and (device-width:1080px) and (device-height:1920px) {
+	#start_div{border:1px solid green;}
+
 
 }
 
