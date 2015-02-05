@@ -149,10 +149,13 @@ $(function(){
 
 var gwidth = $(window).width() / 100 * 84-4;
 var gheight = $(window).height() / 100 * 90 / 100 * 34;
+var svgheight = $(window).height() / 100 * 49 / 100 * 85;
+var svgwidth = $(window).width() / 100 * 82-4;
+
+//设置svg引导画布高宽
+$("#guide_mm svg").attr('width', svgwidth).attr('height', svgheight);
 //设置svg画布高宽
-$("#drawing").css('width',gwidth+'px').css('height',gheight+'px')
-  .attr('svg_width', gwidth)
-  .attr('svg_height', gheight);
+$("#drawing").css('width',gwidth+'px').css('height',gheight+'px').attr('svg_width', gwidth).attr('svg_height', gheight);
 
 
 //眨眼动画
