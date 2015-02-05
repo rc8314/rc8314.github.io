@@ -1,4 +1,3 @@
-var game_now = 'off';
 var 
     sWidth = $('#drawing').attr('svg_width'), sHeight = $('#drawing').attr('svg_height'),
     vWidth = 455, vHeight = 340,
@@ -26,10 +25,12 @@ var
     point = null;
 
 var game = {
+    // 游戏状态
+    status: 'off',
     // 初始化游戏
     init: function () {
-        
-        game_now = 'on';
+        game.status = 'on';
+
         drawAll();
 
         // 绑定按钮事件
@@ -91,12 +92,12 @@ var game = {
 
 function createPath (x1, y1, x2, y2) {
 
-    var xl = x1 + Math.random() * (x2 - x1) / 2;
-    var xr = x2 - Math.random() * (x2 - x1) / 2;
+    var xl = x1 + random(0, 30) / 100 * (x2 - x1);
+    var xr = x2 - random(0, 30) / 100 * (x2 - x1);
 
-    var ym = random(y1, y2);
-    var yt = random(y1, ym);
-    var yb = random(ym, y2);
+    var ym = y1 + random(40, 60) / 100 * (y2 - y1);
+    var yt = y1 + (ym - y1) / 2;
+    var yb = ym + (y2 - ym) / 2;
 
     pathArray = [
         ['M', (x1 + x2) / 2, y2],
@@ -109,7 +110,7 @@ function createArea (x1, y1, x2, y2) {
 
     var yt = random(y1, y2);
     
-    areaArray = [x1, yt, x2, yt + random(20, 40)];
+    areaArray = [x1, yt, x2, yt + random(40, 50)];
 };
 
 //绘制引线和白色安全区域及红线
@@ -121,8 +122,8 @@ function drawAll() {
     createArea(-300, 55 + 20, vWidth + 300, 204 - 20);
 
     group = draw.group().x(vWidth * 0.5 - 70);
-    fire = group.image('../assets/img/fire.gif', 60, 55).center(pathArray[2][3], pathArray[2][4]);
-    bz = group.image('../assets/img/bz.png', 110, 150).y(204);
+    fire = group.image('assets/img/fire.gif', 60, 55).center(pathArray[2][3], pathArray[2][4]);
+    bz = group.image('assets/img/bz.png', 110, 150).y(204);
     path = group.path(pathArray).fill('none');
 
     // 绘制白色安全区域及红线
