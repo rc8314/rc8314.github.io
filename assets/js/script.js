@@ -150,8 +150,8 @@ $(function(){
 var gwidth = $(window).width() / 100 * 84-4;
 var gheight = $(window).height() / 100 * 90 / 100 * 34;
 
-var svgheight = $(window).height() / 100 * 49 / 100 * 80;
-var svgwidth = $(window).width() / 100 * 83-4;
+var svgheight = $(window).height() / 100 * 48 / 100 * 70;
+var svgwidth = $(window).width() / 100 * 83;
 
 //设置svg引导画布高宽
 $("#guide_mm svg").attr('width', svgwidth).attr('height', svgheight);
