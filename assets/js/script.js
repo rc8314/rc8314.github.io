@@ -1,8 +1,9 @@
+var share_num = 0;
 var wxData = {
         "appId": 'wx633fd5d838f8e92d', 
         "imgUrl" : '/assets/img/sharemin.png',
         "link" : location.href,
-        "desc" : "炮竹驱年兽，新年爆好运",
+        "desc" : "炮竹爆好运！" + share_num + "只年兽被我赶跑，你也来试试手运吧？",
         "title" : '炮竹驱年兽，新年爆好运'
 };
 
@@ -11,6 +12,7 @@ $(function(){
 
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
+  $("#loop_mp3").play();
 		
 
   //mask resize
@@ -131,7 +133,7 @@ $(function(){
 
                 wx.ready(function() {
                     wx.onMenuShareTimeline({
-                        title: '炮竹驱年兽，新年爆好运',
+                        title: "炮竹爆好运！" + share_num + "只年兽被我赶跑，你也来试试手运吧？",
                         link: location.href,
                         imgUrl: '/assets/img/sharemin.png',
                         trigger: function() {},
@@ -143,6 +145,13 @@ $(function(){
             }
         });
     })();
+
+
+    //link好礼
+    $(".gift_bt").click(function(){
+      location.href="http://mp.weixin.qq.com/s?__biz=MzA5NDU0MjMwNg==&mid=204733832&idx=1&sn=f3b9e94a1674ebcb3f33c61305150f6f#rd";
+    })
+    
 
 
 })
@@ -194,18 +203,21 @@ function suss_game(){
   
   //hide触屏区域
   $("#hoverpane").hide();
-
   var suss_boss = random(1,3);
-  $("#game_boss").addClass("boss_over_"+suss_boss).delay(2500).animate({opacity:0},1000);
   $("#hover_pane").hide();
   $("#ctl_box,#bz_box").hide();
   rotate("#bzgif");
-  $("#bigfire").delay(700).fadeIn().delay(2000).fadeOut();
-  setTimeout(boss_animate,3600);
+  setTimeout(boss_cry,700);
+  $("#bigfire").delay(610).fadeIn().delay(1500).fadeOut('fast');
+  setTimeout(boss_animate,3000);
+  
 
 }
 
-
+//boss哭
+function boss_cry(){
+  $("#game_boss").addClass("boss_over_"+suss_boss).delay(1300).animate({opacity:0},700);
+}
 
 //再生产boss入场动画，适用于失败再玩一次和成功后继续时
 function boss_animate(){
@@ -221,13 +233,13 @@ function boss_animate(){
   }else{
     $("#scorebar div").html( parseInt($("#scorebar div").html())+1);
   }
-  drawAll();
+  setTimeout(drawAll,1400);
 }
 
 
 //旋转鞭炮
 function rotate(rotate_name) {
-	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 900).delay(400).fadeOut('fast');
+	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 600).delay(300).fadeOut('fast');
 }
 
 
@@ -244,8 +256,10 @@ function guide_animate(){
 function ck_state(cc){
   $("#hoverpane").hide();
   if (cc==0){
+    share_num = 0;
     $("#mask_div,#pop_div,#all_fail").show();
   }else{
+    share_num = cc;
     $("#mask_div,#pop_div,#def_fail").show();
   }
 }
