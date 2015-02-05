@@ -2,6 +2,7 @@ var loop_audio = new Audio;
 loop_audio.src = "./assets/loop.mp3";
 loop_audio.preload = "auto";
 loop_audio.loop = "loop";
+loop_audio.play();
 
 var share_num = 0;
 var wxData = {
@@ -17,7 +18,6 @@ $(function(){
 
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
-  loop_audio.play();
 		
 
   //mask resize
