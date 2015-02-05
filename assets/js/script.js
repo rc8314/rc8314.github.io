@@ -1,6 +1,7 @@
 var loop_audio = new Audio;
 loop_audio.src = "/assets/loop.mp3";
 loop_audio.preload = "auto";
+loop_audio.loop = "loop";
 
 var share_num = 0;
 var wxData = {
