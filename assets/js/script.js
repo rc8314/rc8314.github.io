@@ -114,21 +114,18 @@ $(function(){
     });
 
     (function callWxApi(err){
-        var data = {url: location.href};
-        if(err) data.err = err;
         $.ajax({
-            url: '/sign',
+            url: './sign/index.php',
             type: "POST",
-            data: data,
-            success: function(a) {
-                var _a = $.parseJSON( a );
+            dataType: "json",
+            success: function(_a) {
                 wx.config({
                     debug: false,
-                    appId: 'wx633fd5d838f8e92d',
+                    appId: _a.appId,
                     timestamp: _a.timestamp,
                     nonceStr: _a.nonceStr,
                     signature: _a.signature,
-                    jsApiList: ['checkJsApi','onMenuShareTimeline']
+                    jsApiList: ['checkJsApi', 'onMenuShareTimeline']
                 });
 
                 wx.ready(function() {
@@ -203,7 +200,6 @@ function suss_game(){
   
   //hide触屏区域
   $("#hoverpane").hide();
-  var suss_boss = random(1,3);
   $("#hover_pane").hide();
   $("#ctl_box,#bz_box").hide();
   rotate("#bzgif");
@@ -216,6 +212,7 @@ function suss_game(){
 
 //boss哭
 function boss_cry(){
+  var suss_boss = random(1,3);
   $("#game_boss").addClass("boss_over_"+suss_boss).delay(1300).animate({opacity:0},700);
 }
 
