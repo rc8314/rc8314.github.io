@@ -1,5 +1,5 @@
 var loop_audio = new Audio;
-loop_audio.src = "./assets/loop.mp3";
+loop_audio.src = "http://inimg01.jiuyan.info/audio_kacha.mp3";
 loop_audio.preload = "auto";
 loop_audio.loop = "loop";
 loop_audio.play();
