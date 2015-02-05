@@ -193,7 +193,12 @@ opacity: 0.8;
 }
 
 @media only screen and (device-width:720px) and (device-height:1280px) {
-	#start_div{border:1px solid blue;}
+	#pop_div{height:75%;}
+	#game_boss{height:3%;margin-top:30%;}
+	#boss_talk{margin-top:10%;}
+	#guide_bz{margin-top:30%;}
+	.fail_box{height:48%;}
+	.killnum02{font-size:3.4em;margin:24% 0 0 54%;}
 
 }
 
@@ -270,3 +275,9 @@ opacity: 0.8;
 	.fail_box{height:51%;}
 	.killnum02{font-size:3.4em;margin:24% 0 0 54%;}
 }
+
+
+
+#guide_path {stroke-dasharray: 200;stroke-dashoffset: 0;-webkit-animation: dash 2s linear infinite;animation: dash 2s linear infinite;}
+@-webkit-keyframes dash {to {stroke-dashoffset: 100;}}
+@keyframes dash {to {stroke-dashoffset: 100;}}
