@@ -28,7 +28,7 @@ $(function(){
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
   $("body").click(function(){
-      loop_audio.play();
+      //loop_audio.play();
 	})
 
   //mask resize
