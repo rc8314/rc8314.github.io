@@ -219,7 +219,7 @@ opacity: 0.8;
 @media only screen and (device-width:720px) and (device-height:1280px) {
 	#start_div{border:1px solid red;}
 	#pop_div{height:80%;}
-	#game_pane{height:83%;}
+	#game_pane{height:78%;}
 	#boss_talk{margin-top:12%;}
 	.fail_box{height:58%;}
 	#gfail_box{margin-top:38%;}
