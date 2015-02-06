@@ -95,6 +95,7 @@ opacity: 0.8;}
 #scorebar{position:absolute;background: url(../img/scorebar.png) no-repeat top center;background-size: 100% auto;width: 100%;height:10%;margin-top:4%;text-align:center;-moz-user-select:none;hutia:expression(this.onselectstart=function(){return(false)});}
 #scorebar div{font-size:2.6em;color:#fff;width:15%;margin:5% auto 0 auto;-moz-user-select:none;hutia:expression(this.onselectstart=function(){return(false)});}
 
+#game_boss_pane{position:absolute;width: 100%;height:100%;margin-top:0%;}
 #game_boss{position:absolute;width: 100%;height:4%;margin-top:42%;opacity:0;}
 .boss_1{background: url(../img/boss_1.png) no-repeat top center;background-size:auto 100%;}
 .boss_2{background: url(../img/boss_2.png) no-repeat top center;background-size:auto 100%;}
@@ -219,7 +220,8 @@ opacity: 0.8;
 @media only screen and (device-width:720px) and (device-height:1280px) {
 	#start_div{border:1px solid red;}
 	#pop_div{height:80%;}
-	#game_pane{height:78%;}
+	#game_boss_pane{margin-top:-15%;}
+	#game_pane{height:82%;}
 	#boss_talk{margin-top:12%;}
 	.fail_box{height:58%;}
 	#gfail_box{margin-top:38%;}
