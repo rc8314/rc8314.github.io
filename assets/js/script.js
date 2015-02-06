@@ -1,19 +1,5 @@
-var loop_audio = new Audio;
-loop_audio.src = "./assets/loop.mp3";
-loop_audio.preload = "auto";
-loop_audio.volume = "0.3";
-loop_audio.loop = "loop";
-
-var bom_audio = new Audio;
-bom_audio.src = "./assets/bom.mp3";
-bom_audio.volume = "0.7";
-bom_audio.preload = "auto";
-
-var fire_audio = new Audio;
-fire_audio.src = "./assets/fire.mp3";
-fire_audio.volume = "0.7";
-fire_audio.preload = "auto";
-
+var bom_music = document.getElementById("bom_audio");
+var fire_music = document.getElementById("fire_audio");
 
 var share_num = 0;
 var weiimgurl = 'http://firecrackers.smarteric.cn/demo/assets/img/sharemin.png';
@@ -29,9 +15,7 @@ $(function(){
 
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
-  $("body").click(function(){
-      //loop_audio.play();
-	})
+		
 
   //mask resize
     $("#mask_div,#sharemask").css("height",document.body.clientHeight+'px');
@@ -57,15 +41,9 @@ $(function(){
       clearTimeout(gudietime);
       $("#mask_div,#pop_div,#start_div,#home_box,#game_guide").fadeOut();
       $("#game_pane").fadeIn();
-      $("#hoverpane").show();
-      if (game.status=='off')
-      {
-        game.init();
-      }else{
-        count = 0;
-        $("#scorebar div").html(1);
-        drawAll();
-      }
+
+      game.init();
+
       boss_enter();
 
     })
@@ -242,14 +220,11 @@ function boss_enter(){
 function suss_game(){
   
   //hide触屏区域
-  $("#hoverpane").hide();
-  $("#hover_pane").hide();
   $("#ctl_box,#bz_box").hide();
   rotate("#bzgif");
   setTimeout(boss_cry,700);
   $("#bigfire").delay(610).fadeIn().delay(1500).fadeOut('fast');
   setTimeout(boss_animate,3000);
-  
 
 }
 
@@ -267,20 +242,15 @@ function boss_animate(){
   $("#game_sky").before("<div id='game_boss'></div>");
   $("#game_sky").after("<div id='boss_talk'></div>");
   boss_enter();
-  if (count == 0)
-  {
-    $("#scorebar div").html(1);
-  }else{
-    $("#scorebar div").html( parseInt($("#scorebar div").html())+1);
-  }
-  setTimeout(drawAll,1400);
+  $("#scorebar div").html(count + 1);
+  setTimeout(game.init,1400);
 }
 
 
 //旋转鞭炮
 function rotate(rotate_name) {
 	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 600).delay(300).fadeOut('fast');
-  bom_audio.play();
+  bom_music.play();
 }
 
 
@@ -295,7 +265,6 @@ function guide_animate(){
 
 //判断失败状态
 function ck_state(cc){
-  $("#hoverpane").hide();
   if (cc==0){
     share_num = 0;
     $("#game_boss").hide();
@@ -312,8 +281,8 @@ function ck_state(cc){
 }
 
 function toggleSound() { 
-        //var music = document.getElementById("audio");//获取ID
-        if (loop_audio.paused) { //判读是否播放
-                loop_audio.play(); //没有就播放
+        var loop_music = document.getElementById("loop_audio");//获取ID
+        if (loop_music.paused) { //判读是否播放
+                loop_music.play(); //没有就播放
         } 
 }
