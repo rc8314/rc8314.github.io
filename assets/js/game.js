@@ -27,6 +27,8 @@ var
 var game = {
     // 游戏状态
     status: 'off',
+    //失败后在preesup
+    fail_pressup: 'off',
     // 初始化游戏
     init: function () {
         game.status = 'on';
@@ -56,6 +58,7 @@ var game = {
                 fire.center(point.x, point.y);
 
                 if (point.y > areaArray[3]) {
+                    game.fail_pressup = 'on';
                     game.fail();
                 }
             });
@@ -63,11 +66,13 @@ var game = {
     // 结束游戏
     stop: function () {
         path.pause();
-
-        if (point.y >= areaArray[1] && point.y <= areaArray[3]) {
-            game.succ();
-        } else {
-            game.fail();
+        if (game.fail_pressup == 'off')
+        {
+          if (point.y >= areaArray[1] && point.y <= areaArray[3]) {
+                   game.succ();
+              } else {
+                   game.fail();
+              }
         }
     },
     // 挑战成功
@@ -83,7 +88,8 @@ var game = {
     // 挑战失败
     fail: function () {
         console.log('fail');
-
+        game.fail_pressup = 'off';
+        path.pause();
         $(".kill_num").html(count);
 
         // 开始失败
@@ -145,7 +151,7 @@ function drawAll() {
     draw.clear();
 
     createPath(0, 55 / 2, 94, 204 + 14);
-    createArea(-300, 55 + 20, vWidth + 300, 204 - 20, count);
+    createArea(-300, 55, vWidth + 300, 204, count);
 
     group = draw.group().x(vWidth * 0.5 - 70);
     fire = group.image('assets/img/fire.gif', 60, 55).center(pathArray[2][3], pathArray[2][4]).opacity(0);

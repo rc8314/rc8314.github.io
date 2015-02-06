@@ -17,8 +17,6 @@ $(function(){
 
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
-  setTimeout(loop_play,2000);
-
 		
 
   //mask resize
@@ -117,43 +115,46 @@ $(function(){
         // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
         callWxApi(res);
 
-    });
+  });
 
-    (function callWxApi(err){
-        $.ajax({
-            url: './sign/index.php',
-            type: "POST",
-            dataType: "json",
-            success: function(_a) {
-                wx.config({
-                    debug: false,
-                    appId: _a.appId,
-                    timestamp: _a.timestamp,
-                    nonceStr: _a.nonceStr,
-                    signature: _a.signature,
-                    jsApiList: ['checkJsApi', 'onMenuShareTimeline']
-                });
+  (function callWxApi(err){
+      $.ajax({
+          url: './sign/index.php',
+          type: "POST",
+          dataType: "json",
+          data: {
+              url: location.href
+          },
+          success: function(_a) {
+              wx.config({
+                  debug: false,
+                  appId: _a.appId,
+                  timestamp: _a.timestamp,
+                  nonceStr: _a.nonceStr,
+                  signature: _a.signature,
+                  jsApiList: ['checkJsApi', 'onMenuShareTimeline']
+              });
 
-                wx.ready(function() {
-                    wx.onMenuShareTimeline({
-                        title: "炮竹爆好运！" + share_num + "只年兽被我赶跑，你也来试试手运吧？",
-                        link: location.href,
-                        imgUrl: '/assets/img/sharemin.png',
-                        trigger: function() {},
-                        success: function() {},
-                        cancel: function() {},
-                        fail: function() {}
-                    });
-                })
-            }
-        });
-    })();
+              wx.ready(function() {
+                  wx.onMenuShareTimeline({
+                      title: "炮竹爆好运！" + share_num + "只年兽被我赶跑，你也来试试手运吧？",
+                      link: location.href,
+                      imgUrl: '/assets/img/sharemin.png',
+                      trigger: function() {},
+                      success: function() {},
+                      cancel: function() {},
+                      fail: function() {}
+                  });
+              })
+          }
+      });
+  })();
 
 
-    //link好礼
-    $(".gift_bt").click(function(){
-      location.href="http://mp.weixin.qq.com/s?__biz=MzA5NDU0MjMwNg==&mid=204733832&idx=1&sn=f3b9e94a1674ebcb3f33c61305150f6f#rd";
-    })
+  //link好礼
+  $(".gift_bt").click(function(){
+    location.href="http://mp.weixin.qq.com/s?__biz=MzA5NDU0MjMwNg==&mid=204733832&idx=1&sn=f3b9e94a1674ebcb3f33c61305150f6f#rd";
+  })
     
 
 
@@ -164,6 +165,11 @@ var gheight = $(window).height() / 100 * 90 / 100 * 34;
 
 var svgheight = $(window).height() / 100 * 48 / 100 * 70;
 var svgwidth = $(window).width() / 100 * 83;
+
+if (window.screen.height == 480){
+	gwidth = $(window).width() / 100 * 69;
+	gheight = $(window).height() / 100 * 90 / 100 * 28;
+}
 
 //设置svg引导画布高宽
 $("#guide_mm svg").attr('width', svgwidth).attr('height', svgheight);
@@ -260,10 +266,16 @@ function ck_state(cc){
   $("#hoverpane").hide();
   if (cc==0){
     share_num = 0;
-    $("#mask_div,#pop_div,#all_fail").show();
+    $("#game_boss").hide();
+    $("#gfail_box").animate({opacity:1,height:'50%',marginTop:'48%'},700).delay(2000).animate({opacity:0,height:'4%',marginTop:'42%'},100);
+    $("#boss_talk_succ").delay(800).animate({opacity:1},300).delay(1700).animate({opacity:0},100);
+    $("#mask_div,#pop_div,#all_fail").delay(3000).fadeIn('fast');
   }else{
     share_num = cc;
-    $("#mask_div,#pop_div,#def_fail").show();
+    $("#game_boss").hide();
+    $("#gfail_box").animate({opacity:1,height:'52%',marginTop:'48%'},700).delay(2800).animate({opacity:0,height:'4%',marginTop:'42%'},100);
+    $("#boss_talk_succ").delay(800).animate({opacity:1},300).delay(2500).animate({opacity:0},100);
+    $("#mask_div,#pop_div,#def_fail").delay(3000).fadeIn('fast');
   }
 }
 
