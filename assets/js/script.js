@@ -3,9 +3,7 @@ loop_audio.src = "./assets/loop.mp3";
 loop_audio.preload = "auto";
 loop_audio.loop = "loop";
 
-function loop_play(){
-  $("#loop_play").click();
-}
+
 
 var share_num = 0;
 var weiimgurl = 'http://firecrackers.smarteric.cn/demo/assets/img/sharemin.png';
@@ -21,11 +19,9 @@ $(function(){
 
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
-  $("#loop_play").click(function(){
+  $("body").click(function(){
       loop_audio.play();
-      $(this).remove();
 	})
-  setTimeout(loop_play,3500);
 
   //mask resize
     $("#mask_div,#sharemask").css("height",document.body.clientHeight+'px');
