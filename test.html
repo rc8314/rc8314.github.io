@@ -2,19 +2,31 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>炮竹驱年兽，新年爆好运</title>
+<title></title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <meta content="yes" name="apple-mobile-web-app-capable">
 <meta name="description" content="">
 <meta name="keywords" content="">
 </head>
 <body id="main">
-aaa
+
+<div id="kkk"></div>
 
 </body>
 </html>
 <script>
 
-alert("width+" + window.screen.availWidth + "height+" + window.screen.availHeight) ;
 
+</script>
+<script src="http://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+<script>
+var loop_audio = new Audio;
+loop_audio.src = "http://rc8314.github.io/assets/loop.mp3";
+loop_audio.preload = "auto";
+loop_audio.loop = "loop";
+$(document).ready(function(){
+	$("#kkk").click(function(){
+		loop_audio.play();
+	})
+})
 </script>
