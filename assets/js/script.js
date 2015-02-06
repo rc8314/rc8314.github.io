@@ -3,6 +3,13 @@ loop_audio.src = "./assets/loop.mp3";
 loop_audio.preload = "auto";
 loop_audio.loop = "loop";
 
+var bom_audio = new Audio;
+bom_audio.src = "./assets/bom.mp3";
+bom_audio.preload = "auto";
+
+var fire_audio = new Audio;
+fire_audio.src = "./assets/fire.mp3";
+fire_audio.preload = "auto";
 
 
 var share_num = 0;
@@ -270,6 +277,7 @@ function boss_animate(){
 //旋转鞭炮
 function rotate(rotate_name) {
 	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 600).delay(300).fadeOut('fast');
+  bom_audio.delay(500).play();
 }
 
 

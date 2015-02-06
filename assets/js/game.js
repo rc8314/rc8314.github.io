@@ -45,6 +45,7 @@ var game = {
     // 开始游戏
     start: function () {
         // 显示燃烧动画
+        fire_audio.play();
         fire.opacity(1);
 
         var speed = getSpeed(count);
