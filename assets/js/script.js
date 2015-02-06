@@ -17,6 +17,9 @@ $(function(){
 
   //页面加载完毕淡入
   $("#loadmask").fadeOut(2000);
+  $("#imghome").load(function(){
+		loop_audio.play();
+	})
 		
 
   //mask resize
