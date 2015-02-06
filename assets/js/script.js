@@ -280,7 +280,7 @@ function boss_animate(){
 //旋转鞭炮
 function rotate(rotate_name) {
 	$(rotate_name).show().animate({rotate: '360',marginTop:'50%'}, 600).delay(300).fadeOut('fast');
-  bom_audio.delay(500).play();
+  bom_audio.play();
 }
 
 
@@ -311,6 +311,9 @@ function ck_state(cc){
   }
 }
 
-function loop_play(){
-  loop_audio.play()
+function toggleSound() { 
+        //var music = document.getElementById("audio");//获取ID
+        if (loop_audio.paused) { //判读是否播放
+                loop_audio.play(); //没有就播放
+        } 
 }
