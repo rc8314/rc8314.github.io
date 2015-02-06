@@ -66,6 +66,7 @@ var game = {
     },
     // 结束游戏
     stop: function () {
+        fire_audio.pause();
         path.pause();
         if (game.fail_pressup == 'off')
         {
@@ -78,6 +79,7 @@ var game = {
     },
     // 挑战成功
     succ: function () {
+        fire_audio.pause();
         console.log('succ: ' + (count + 1));
 
         count++;

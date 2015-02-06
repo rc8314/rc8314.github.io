@@ -1,15 +1,17 @@
 var loop_audio = new Audio;
 loop_audio.src = "./assets/loop.mp3";
 loop_audio.preload = "auto";
-loop_audio.volume = "0.5";
+loop_audio.volume = "0.3";
 loop_audio.loop = "loop";
 
 var bom_audio = new Audio;
 bom_audio.src = "./assets/bom.mp3";
+bom_audio.volume = "0.7";
 bom_audio.preload = "auto";
 
 var fire_audio = new Audio;
 fire_audio.src = "./assets/fire.mp3";
+fire_audio.volume = "0.7";
 fire_audio.preload = "auto";
 
 
