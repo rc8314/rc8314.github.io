@@ -108,7 +108,7 @@ var game = {
     // 挑战失败
     fail: function () {
         //console.log('fail');
-
+        fire_music.pause();
         $("#hoverpane").hide();
         $(".kill_num").html(count);
 
